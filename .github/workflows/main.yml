@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: "cf0b1b9d-b113-4f80-ab74-f93d7f9d08ec"
+          heroku_app_name: "uwa-testing-unit27"
+          heroku_email: "aaron@charactergroup.com.au"
